@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3f331133a2683488209eed0fcad9f8, type: 3}
+  m_Name: 4 Prong With Ammo
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
+  elements:
+  - size: {x: 2, y: 2}
+    offsetFromCenter: 0
+    offsetWithSpread: 0
+    scaleWithSpread: 0
+    spreadOffsetDirection: {x: 0, y: 1}
+    offset: {x: 0, y: 0}
+    overrideColor: 0
+    color: {r: 0, g: 0, b: 0, a: 0}
+    count: 1
+    orbitSize: 0
+    orbitStartAngle: 0
+    rotationOffset: 0
+    sprite: {fileID: 0}
+    customPrefab: {fileID: 0}
+  - size: {x: 2, y: 16}
+    offsetFromCenter: 2
+    offsetWithSpread: 1
+    scaleWithSpread: 0
+    spreadOffsetDirection: {x: 0, y: 1}
+    offset: {x: 0, y: 0}
+    overrideColor: 0
+    color: {r: 1, g: 0.18947032, b: 0, a: 1}
+    count: 4
+    orbitSize: 360
+    orbitStartAngle: 0
+    rotationOffset: 0
+    sprite: {fileID: 0}
+    customPrefab: {fileID: 0}
+  - size: {x: 30.13, y: 22.2}
+    offsetFromCenter: 0
+    offsetWithSpread: 0
+    scaleWithSpread: 0
+    spreadOffsetDirection: {x: 1, y: 0}
+    offset: {x: 20.8, y: 14}
+    overrideColor: 0
+    color: {r: 1, g: 0.18947032, b: 0, a: 1}
+    count: 1
+    orbitSize: 0
+    orbitStartAngle: 0
+    rotationOffset: 0
+    sprite: {fileID: 0}
+    customPrefab: {fileID: 3539745470541778043, guid: 23661513fc2c4c04287c70a014f0b3e8,
+      type: 3}
