@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "Crosshair Template", menuName = "Terrian Testing/Crosshair Template", order = 0)]
+[CreateAssetMenu(fileName = "Crosshair Template", menuName = "Crosshair Template", order = 0)]
 public class CrosshairTemplate : ScriptableObject
 {
     public Color color;
