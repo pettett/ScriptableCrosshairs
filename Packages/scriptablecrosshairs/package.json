@@ -1,16 +1,14 @@
 {
-    "name": "scriptablecrosshairs",
-    "version": "0.2.0",
-    "displayName": "Scriptable Crosshairs",
-    "description": "This is an example package",
-    "unity": "2020.1",
-    "dependencies": {
-   },
-   "keywords": [
-      "Crosshair"
-    ],
-    "author": {
-      "name": "StolenCheese",
-      "url": "https://github.com/StolenCheese"
-    }
+  "name": "scriptablecrosshairs",
+  "version": "0.2.0",
+  "displayName": "Scriptable Crosshairs",
+  "description": "An open system of dynamic crosshairs for Unity",
+  "unity": "2020.1",
+  "keywords": [
+    "Crosshair"
+  ],
+  "author": {
+    "name": "StolenCheese",
+    "url": "https://github.com/StolenCheese"
   }
+}
