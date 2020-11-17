@@ -1,6 +1,10 @@
 # ScriptableCrosshairs
 An open system of dynamic crosshairs for Unity
 
+To insert this as a package, use this git url:
+
+<code>https://github.com/StolenCheese/ScriptableCrosshairs.git?path=/Packages/scriptablecrosshairs#Packaged</code>
+
 Current Features:
 * Layer based crosshair editor
 * Runtime crosshair editing
