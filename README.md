@@ -1,5 +1,5 @@
 # ScriptableCrosshairs
-An open system of dynamic crosshairs for Unity, currently pending review for the asset store
+An open system of dynamic crosshairs for Unity
 
 Current Features:
 * Layer based crosshair editor
