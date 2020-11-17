@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public static class Vector2Extension
 {
-
+    /// <summary>
+    /// Rotate a vector2 about the origin by degrees degrees (not radians)
+    /// </summary>
     public static Vector2 Rotate(this Vector2 v, float degrees)
     {
         float sin = Mathf.Sin(degrees * Mathf.Deg2Rad);
@@ -25,20 +27,27 @@ public class CrosshairController : MonoBehaviour
     public static CrosshairController singleton;
     public RectTransform[][] crosshairParts;
     public float spread;
-
+    /// <summary> Quick global color adjuster
+    /// This will be the color of elements without overrideColor set to true, and is based off the value in the CrosshairTemplate t
+    /// </summary>
     [HideInInspector] public Color color;
     /// <summary> The list of active elements. Stored in a separate array so changes to the crosshair are not
     /// If you want to directly edit the template, use a reference to the CrosshairTemplate class
     /// </summary>
     [HideInInspector] public CrosshairElement[] elements;
 
+    /// <summary>
+    /// Set the spread of the controller singleton
+    /// </summary>
     public static void SetSpread(float spread)
     {
         singleton.spread = spread;
         //update the layout of the crosshair parts
         singleton.UpdateCrosshairParts();
     }
-
+    /// <summary>
+    /// Get the horizontal FOV of the camera
+    /// </summary>
     float HorizontalFOV()
     {
 
@@ -47,17 +56,21 @@ public class CrosshairController : MonoBehaviour
         var radHFOV = 2 * Mathf.Atan(Mathf.Tan(radAngle / 2) * cam.aspect);
         return Mathf.Rad2Deg * radHFOV;
     }
-    public static Vector2 MaskFromEffects(EffectAxis e)
+    /// <summary>
+    /// Create a vector2 based on effectAxis
+    /// </summary>
+    public static Vector2 MaskFromEffects(EffectAxis e,float enabled=1, float disabled = 0)
     {
-        return new Vector2(e.HasFlag(EffectAxis.X) ? 1 : 0, e.HasFlag(EffectAxis.Y) ? 1 : 0);
+        return new Vector2(e.HasFlag(EffectAxis.X) ? enabled : disabled, e.HasFlag(EffectAxis.Y) ? enabled : disabled);
     }
     public void UpdateCrosshairParts()
     {
-
+        //Find the number of canvas units that corralate to 1 degree of change
         float unitsPerDegree = GetComponentInParent<Canvas>().GetComponent<RectTransform>().sizeDelta.x / HorizontalFOV();
 
         for (int i = 0; i < elements.Length; i++)
         {
+            //Calculate the desired scale of this element, including current spead
             Vector2 scale = elements[i].size;
 
             if (elements[i].scaleWithSpread.HasFlag(EffectAxis.X))
@@ -102,10 +115,6 @@ public class CrosshairController : MonoBehaviour
                 }
 
             }
-
-
-
-
         }
     }
 
@@ -162,6 +171,7 @@ public class CrosshairController : MonoBehaviour
                 }
                 else
                 {
+                    //Create the crosshair element from scratch
                     go = new GameObject("Crosshair part", typeof(RectTransform), typeof(Image));
 
                     go.GetComponent<Image>().color = t.elements[i].overrideColor ? t.elements[i].color : t.color;
@@ -176,33 +186,4 @@ public class CrosshairController : MonoBehaviour
         }
         UpdateCrosshairParts();
     }
-
-
-    // public void EnableCrosshair()
-    // {
-    //     staticCrosshair.gameObject.SetActive(true);
-    // }
-    // public void DisableCrosshair()
-    // {
-    //     staticCrosshair.gameObject.SetActive(false);
-    // }
-    // public void EnableDynamicCrosshair()
-    // {
-    //     dynamicCrosshair.gameObject.SetActive(true);
-    //     EnableCrosshair();
-    // }
-    // public void SetDynamicCrosshairTarget(Vector3 target)
-    // {
-    //     Vector3 screenPos = camera.WorldToScreenPoint(target);
-    //     screenPos.z = 0;
-    //     dynamicCrosshair.position = screenPos;
-    // }
-
-    // public void DisableDynamicCrosshair()
-    // {
-    //     dynamicCrosshair.gameObject.SetActive(false);
-    //     DisableCrosshair();
-    // }
-
-
 }

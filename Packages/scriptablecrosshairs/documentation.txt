@@ -1,0 +1,20 @@
+This asset's source project is available on github:
+https://github.com/StolenCheese/ScriptableCrosshairs
+And has more detailed instructions on setup and future plans
+
+Demo Scenes:
+Crosshairs Example - shows a bunch of example crosshairs, with runtime adjustments to certain properties.
+Look at the example crosshair changer script for the code for this
+
+Components of the scriptable crosshair system:
+
+Scriptable crosshair asset
+This contains all the information about the layers of the scriptable crosshair
+Create one by right clicking to new/ScriptableCrosshairs/Scriptable Crosshair Asset
+
+Scriptable Crosshair Controller
+The component that is placed on an empty UI rectTransform that will automatically create the crosshair at runtime
+Accessible properties
+elements - all the active elements of the crosshair from the asset, copied to here as to allow non-permanent changes to the crosshairs
+during runtime, for example color change, shape change, transparency change, etc.
+color - global crosshair color
